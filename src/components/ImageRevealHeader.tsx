@@ -7,14 +7,16 @@ import gsap from "gsap";
 
 const ImageRevealHeader = () => {
   useEffect(() => {
-    gsap.to(sliderRef.current, {
+    const timeline = gsap.timeline();
+    timeline.to(sliderRef.current, {
       width: "0%",
-      duration: 0.7,
-      ease: "power1.in",
+      duration: 0.6,
+      ease: "linear",
       opacity: 1,
     });
   }, []);
   const sliderRef = useRef(null);
+  const imageRef = useRef(null);
   return (
     <div className={styles.header}>
       <div className={styles.verticalText}>
@@ -27,6 +29,7 @@ const ImageRevealHeader = () => {
         <Image
           src={headerImg}
           alt=""
+          ref={imageRef}
         />
       </div>
     </div>
