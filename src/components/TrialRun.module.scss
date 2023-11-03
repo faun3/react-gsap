@@ -3,17 +3,30 @@
   width: 30rem;
   height: 30rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 3rem;
+  padding: 1rem;
 
-  & p {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: burlywood;
-    font-weight: 700;
+  button {
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: blue;
+    cursor: pointer;
+    border-radius: 2.5rem;
   }
 
-  & h1 {
-    font-weight: 200;
-    font-size: 2rem;
+  .circle {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 2.5rem;
+    background-color: red;
+
+    &:nth-child(3) {
+      background-color: gold;
+    }
   }
 }
