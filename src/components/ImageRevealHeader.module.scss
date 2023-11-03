@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+
+  .verticalText {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    display: flex;
+    flex-direction: column;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+
+    .copy {
+      text-orientation: sideways;
+      justify-self: start;
+    }
+  }
+}
+
+.imgWrapper {
+  width: 70%;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+}
