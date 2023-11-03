@@ -1,4 +1,6 @@
 import style from "./page.module.scss";
+import FlyUpImage from "@/components/FlyUpImage";
+import headerImg from "@/public/headerImg.jpg";
 
 const FlyHeaderPage = () => {
   return (
@@ -36,7 +38,19 @@ const FlyHeaderPage = () => {
           </button>
         </div>
       </div>
-      <div className={style.headerRight}></div>
+      <div className={style.headerRight}>
+        <FlyUpImage
+          source={headerImg}
+          height="60%"
+          width="30%"
+        />
+        <FlyUpImage
+          source={headerImg}
+          height="70%"
+          width="25%"
+          alignSelf="flex-end"
+        />
+      </div>
     </div>
   );
 };
