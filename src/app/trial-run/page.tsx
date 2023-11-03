@@ -1,4 +1,4 @@
-import TrialRun from "../../../components/TrialRun";
+import TrialRun from "../../components/TrialRun";
 
 const TrialPage = () => {
   return <TrialRun />;
