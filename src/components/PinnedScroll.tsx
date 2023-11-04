@@ -9,18 +9,23 @@ gsap.registerPlugin(ScrollTrigger);
 const PinnedScroll = () => {
   const spinner = useRef(null);
   const container = useRef(null);
+  const end = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container.current,
         pin: spinner.current,
-        start: "top center",
-        end: "+=1500",
+        start: "top top",
+        end: "+=500",
+        markers: true,
+        toggleActions: "restart pause pause pause",
       },
     });
 
     tl.addLabel("pinned").to(spinner.current, {
       rotation: 360,
+      y: 500,
+      duration: 3,
     });
   }, []);
   return (
@@ -49,7 +54,7 @@ const PinnedScroll = () => {
         </svg>
         <div className={style.square} ref={spinner}></div>
       </div>
-      <div className={style.makesSpace}></div>
+      <div className={style.makesSpace} ref={end}></div>
     </>
   );
 };
