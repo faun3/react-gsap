@@ -10,22 +10,20 @@ const PinnedScroll = () => {
   const spinner = useRef(null);
   const container = useRef(null);
   const end = useRef(null);
+
   useEffect(() => {
-    const tl = gsap.timeline({
+    gsap.to(spinner.current, {
       scrollTrigger: {
         trigger: container.current,
+        scrub: 1,
         pin: spinner.current,
         start: "top top",
-        end: "+=500",
+        end: "+=100%-100%",
         markers: true,
-        toggleActions: "restart pause pause pause",
       },
-    });
-
-    tl.addLabel("pinned").to(spinner.current, {
-      rotation: 360,
-      y: 500,
-      duration: 3,
+      y: "100%",
+      x: "100%",
+      duration: 5,
     });
   }, []);
   return (
@@ -37,21 +35,6 @@ const PinnedScroll = () => {
         facere laboriosam assumenda molestiae eius!
       </div>
       <div className={style.spinner} ref={container}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="icon icon-tabler icon-tabler-activity"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-          <path d="M3 12h4l3 8l4 -16l3 8h4"></path>
-        </svg>
         <div className={style.square} ref={spinner}></div>
       </div>
       <div className={style.makesSpace} ref={end}></div>
